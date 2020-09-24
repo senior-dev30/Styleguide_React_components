@@ -1,0 +1,100 @@
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Bootstrap imports, import only what required to control the bundle size
+
+@import '~bootstrap/scss/functions';
+
+@import './agreed-custom-bootstrap/variables'; // CUSTOM VARIABLES
+// @import '~bootstrap/scss/variables';
+
+@import '~bootstrap/scss/mixins';
+@import './agreed-custom-bootstrap/mixins';
+
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import './agreed-custom-bootstrap/reboot';
+//  @import "~bootstrap/scss/type";
+//  @import "~bootstrap/scss/images";
+//  @import "~bootstrap/scss/code";
+//  @import "~bootstrap/scss/grid";
+//  @import "~bootstrap/scss/tables";
+@import '~bootstrap/scss/forms';
+@import './agreed-custom-bootstrap/forms';
+@import '~bootstrap/scss/buttons';
+//  @import "~bootstrap/scss/transitions";
+@import '~bootstrap/scss/dropdown';
+@import './agreed-custom-bootstrap/dropdown';
+@import '~bootstrap/scss/button-group';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/custom-forms';
+@import './agreed-custom-bootstrap/custom-forms';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+//  @import "~bootstrap/scss/card";
+@import '~bootstrap/scss/breadcrumb';
+//  @import "~bootstrap/scss/pagination";
+//  @import "~bootstrap/scss/badge";
+//  @import "~bootstrap/scss/jumbotron";
+//  @import "~bootstrap/scss/alert";
+
+@import '~bootstrap/scss/progress';
+@import './agreed-custom-bootstrap/progress';
+
+//  @import "~bootstrap/scss/media";
+//  @import "~bootstrap/scss/list-group";
+@import '~bootstrap/scss/close';
+//  @import "~bootstrap/scss/toasts";
+//  @import "~bootstrap/scss/modal";
+//  @import "~bootstrap/scss/tooltip";
+//  @import "~bootstrap/scss/popover";
+//  @import "~bootstrap/scss/carousel";
+//  @import "~bootstrap/scss/spinners";
+
+@import '~bootstrap/scss/utilities';
+// bootstrap/scss/utilities impors following files
+// @import "~bootstrap/scss/utilities/align";
+// @import '~bootstrap/scss/utilities/background';
+// @import "~bootstrap/scss/utilities/borders";
+// @import "~bootstrap/scss/utilities/clearfix";
+// @import "~bootstrap/scss/utilities/display";
+// @import "~bootstrap/scss/utilities/embed";
+// @import "~bootstrap/scss/utilities/flex";
+// @import "~bootstrap/scss/utilities/float";
+// @import "~bootstrap/scss/utilities/overflow";
+// @import "~bootstrap/scss/utilities/position";
+// @import "~bootstrap/scss/utilities/screenreaders";
+// @import '~bootstrap/scss/utilities/shadows';
+// @import "~bootstrap/scss/utilities/sizing";
+// @import "~bootstrap/scss/utilities/stretched-link";
+// @import "~bootstrap/scss/utilities/spacing";
+// @import "~bootstrap/scss/utilities/text";
+// @import "~bootstrap/scss/utilities/visibility";
+
+//  @import "~bootstrap/scss/print";
+
+// ^ copied from bootstrap/scss/bootstrap.scss
+// @import '~bootstrap/scss/bootstrap.scss';
+
+// override bootstrap styles
+
+@import '../scss/agreed-custom-bootstrap/nav';
+@import '../scss/agreed-custom-bootstrap/breadcrumb';
+@import '../scss/agreed-custom-bootstrap/button';
+
+// agree fonts
+
+@import '../fonts/fonts.css';
+
+/*!
+	agreed component styles
+*/
+
+// @import 'react/components/EventHeader.scss';
+@import 'react/components/Avatar.scss';
+@import 'react/components/ButtonGroupFilter.scss';
+@import 'react/components/ToggleSwitch.scss';

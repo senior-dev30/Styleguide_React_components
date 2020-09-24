@@ -1,0 +1,10 @@
+/* Utilities */
+
+// Font Sizes
+$i: 10;
+@while $i <= 20 {
+  .font-#{$i}px {
+    font-size: 1px * $i;
+  }
+  $i: $i + 2;
+}

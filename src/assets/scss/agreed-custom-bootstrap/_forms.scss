@@ -1,0 +1,62 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Textual form controls
+//
+
+.form-control {
+  padding: 15px $input-padding-x 13px;
+
+  // Placeholder
+  &::placeholder {
+    line-height: normal;
+    letter-spacing: -0.39px;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    border: none;
+    color: $brown-grey;
+  }
+}
+
+// hide invalid icon for password because we're using visibitliy icon there
+// used inside FormGroupWithInputPassword
+.form-control.hide-default-invalid-icon,
+.form-control.hide-default-invalid-icon {
+  background: none;
+}
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-text {
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: -0.33px;
+}
+
+// InputPassword
+//
+// To show error for
+.input-password-wrapper ~ .invalid-feedback {
+  display: block;
+}
+
+// add left padding for feedback/hint text
+.form-text {
+  padding-left: 1rem;
+}
+
+@each $state, $data in $form-validation-states {
+  .#{$state}-feedback {
+    padding-left: 1rem;
+  }
+}

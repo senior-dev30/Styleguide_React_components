@@ -1,0 +1,62 @@
+.breadcrumb {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  margin-bottom: $breadcrumb-margin-bottom;
+  list-style: none;
+  background-color: $breadcrumb-bg;
+  @include border-radius($breadcrumb-border-radius);
+  border: solid 1px $secondary;
+}
+
+.breadcrumb-item {
+  color: $secondary;
+  font-size: 14px;
+  letter-spacing: -0.39px;
+  line-height: normal;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  // The separator between breadcrumbs (by default, a forward-slash: "/")
+  + .breadcrumb-item {
+    padding-left: $breadcrumb-item-padding;
+
+    &::before {
+      display: inline-block; // Suppress underlining of the separator in modern browsers
+      padding-right: $breadcrumb-item-padding;
+      color: $breadcrumb-divider-color;
+      content: $breadcrumb-divider;
+      top: 2px;
+      position: relative;
+    }
+  }
+
+  // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
+  // without `<ul>`s. The `::before` pseudo-element generates an element
+  // *within* the .breadcrumb-item and thereby inherits the `text-decoration`.
+  //
+  // To trick IE into suppressing the underline, we give the pseudo-element an
+  // underline and then immediately remove it.
+  + .breadcrumb-item:hover::before {
+    text-decoration: underline;
+  }
+  // stylelint-disable-next-line no-duplicate-selectors
+  + .breadcrumb-item:hover::before {
+    text-decoration: none;
+  }
+
+  &:first-child::before {
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTEyLjcyIDMzLjVhMiAyIDAgMCAxIDIgMlY0MWEyIDIgMCAwIDEtMiAySDdhMiAyIDAgMCAxLTItMnYtNS41YTIgMiAwIDAgMSAyLTJoNS43MnptMTQuMTQgMGEyIDIgMCAwIDEgMiAyVjQxYTIgMiAwIDAgMS0yIDJoLTUuNzJhMiAyIDAgMCAxLTItMnYtNS41YTIgMiAwIDAgMSAyLTJoNS43MnptMTQuMTQgMGEyIDIgMCAwIDEgMiAyVjQxYTIgMiAwIDAgMS0yIDJoLTUuNzJhMiAyIDAgMCAxLTItMnYtNS41YTIgMiAwIDAgMSAyLTJINDF6TTEyLjcyIDE5LjI1YTIgMiAwIDAgMSAyIDJ2NS41YTIgMiAwIDAgMS0yIDJIN2EyIDIgMCAwIDEtMi0ydi01LjVhMiAyIDAgMCAxIDItMmg1Ljcyem0xNC4xNCAwYTIgMiAwIDAgMSAyIDJ2NS41YTIgMiAwIDAgMS0yIDJoLTUuNzJhMiAyIDAgMCAxLTItMnYtNS41YTIgMiAwIDAgMSAyLTJoNS43MnptMTQuMTQgMGEyIDIgMCAwIDEgMiAydjUuNWEyIDIgMCAwIDEtMiAyaC01LjcyYTIgMiAwIDAgMS0yLTJ2LTUuNWEyIDIgMCAwIDEgMi0ySDQxek0xMi43MiA1YTIgMiAwIDAgMSAyIDJ2NS41YTIgMiAwIDAgMS0yIDJIN2EyIDIgMCAwIDEtMi0yVjdhMiAyIDAgMCAxIDItMmg1Ljcyem0xNC4xNCAwYTIgMiAwIDAgMSAyIDJ2NS41YTIgMiAwIDAgMS0yIDJoLTUuNzJhMiAyIDAgMCAxLTItMlY3YTIgMiAwIDAgMSAyLTJoNS43MnpNNDEgNWEyIDIgMCAwIDEgMiAydjUuNWEyIDIgMCAwIDEtMiAyaC01LjcyYTIgMiAwIDAgMS0yLTJWN2EyIDIgMCAwIDEgMi0ySDQxeiIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBmaWxsLW9wYWNpdHk9IjAiIGQ9Ik0wIDBoNDh2NDhIMHoiLz4KICAgICAgICA8Zz4KICAgICAgICAgICAgPG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPgogICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjYSIvPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgZmlsbD0iIzgwODY4QiIgeGxpbms6aHJlZj0iI2EiLz4KICAgICAgICAgICAgPGcgZmlsbD0iIzRCN0U5OSIgbWFzaz0idXJsKCNiKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCAwaDQ4djQ4SDB6Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=);
+    margin-right: 11px;
+
+    top: 2px;
+    position: relative;
+  }
+
+  &.active {
+    color: $breadcrumb-active-color;
+    font-weight: 600;
+  }
+}

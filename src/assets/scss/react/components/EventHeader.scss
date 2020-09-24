@@ -1,0 +1,15 @@
+.event--header-oval {
+  width: 6px;
+  height: 6px;
+  border: solid 1px $secondary;
+  border-radius: 3px;
+  background-color: $secondary;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.event--header-user-image {
+  width: 16px;
+  height: 16px;
+  border-radius: 13px;
+}

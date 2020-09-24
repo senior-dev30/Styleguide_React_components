@@ -1,0 +1,43 @@
+// Change spacign of dropdown toggle button
+.dropdown-toggle {
+  padding: 8px 1rem 5px;
+}
+
+// remove/disable by default bootstrap caret (created with borders)
+.dropdown-toggle::after {
+  margin-left: 33px;
+  border: none;
+  position: relative;
+  top: 6.6px;
+}
+
+// change color with expalneded to white
+.dropdown-toggle[aria-expanded='true'] {
+  &::after {
+    content: escape-svg(
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 48 48' fill='white'><path fill='white' d='M33.535 0L19 14.216 4.465 0 0 4.377 19 23 38 4.377z'/></svg>")
+    ) !important;
+  }
+}
+
+/** NOTE to myself: @todo This should somehow inehrit color from button outline  */
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    &.dropdown-toggle {
+      &::after {
+        content: escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 48 48' fill='#{$value}'><path  d='M33.535 0L19 14.216 4.465 0 0 4.377 19 23 38 4.377z'/></svg>")
+        );
+      }
+    }
+  }
+  .btn-outline-#{$color}:hover {
+    &.dropdown-toggle {
+      &::after {
+        content: escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 48 48' fill='white'><path fill='white' d='M33.535 0L19 14.216 4.465 0 0 4.377 19 23 38 4.377z'/></svg>")
+        );
+      }
+    }
+  }
+}

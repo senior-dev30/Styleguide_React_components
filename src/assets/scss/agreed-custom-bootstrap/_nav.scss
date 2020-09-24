@@ -1,0 +1,47 @@
+.nav-tabs {
+  border: none;
+}
+
+.nav-tabs .nav-item .nav-link {
+  position: relative;
+  color: $secondary;
+  font-size: 21px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: -0.58px;
+  line-height: normal;
+  padding: $nav-link-padding-y 0px;
+
+  &.active {
+    color: $primary;
+    border-bottom: 4px solid $primary;
+    font-weight: 600;
+  }
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  margin-right: 60px;
+}
+
+.notification-red-oval {
+  position: absolute;
+  right: -13px;
+  top: 0px;
+
+  border-radius: 50% !important;
+
+  width: 15px;
+  height: 15px;
+
+  box-shadow: 0 1px 5px 0 #c8d3e6;
+  border: solid 1px $white;
+  background-color: #e02020; //$notification-red;
+}
+
+.tab-nav-link-exponent {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  font-weight: normal;
+}

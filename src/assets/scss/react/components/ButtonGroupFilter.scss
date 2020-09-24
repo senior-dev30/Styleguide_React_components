@@ -1,0 +1,135 @@
+.btn-group-filter--default {
+  box-shadow: 0 1px 3px 0 #898989;
+  border-radius: 5px;
+  background-color: $white;
+
+  button {
+    font-size: 14px;
+    color: $secondary;
+    background-color: $white;
+    padding: 11px 24px;
+    border: none;
+    // margin-right: 1px;
+    outline-width: 0px;
+    cursor: pointer;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+
+  button.active {
+    color: $primary;
+    font-weight: 600;
+  }
+
+  button:not(:last-child) {
+    border-right: 1px solid $secondary;
+  }
+
+  button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.btn-group-filter--outline {
+  display: inline-flex;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+
+  button {
+    position: relative;
+    flex: 0 1 auto;
+
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.44px;
+    text-align: center;
+
+    background-color: $white;
+    padding: 15px 40px 11px 40px;
+    color: $secondary;
+    border: 1px solid #a6a6a6;
+    outline-width: 0px;
+
+    cursor: pointer;
+
+    // Bring the hover, focused, and "active" buttons to the front to overlay
+    // the borders properly
+    @include hover {
+      z-index: 1;
+    }
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 1;
+    }
+  }
+  // Prevent double borders when buttons are next to each other
+  button + button {
+    margin-left: -1px;
+  }
+
+  button:first-child {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+
+  button:last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  button.active {
+    font-weight: 600;
+    color: $primary;
+    border-color: $secondary;
+    box-shadow: 0 1px 8px 0 rgba(119, 134, 158, 0.25);
+  }
+}
+
+.btn-group-filter--purple-solid {
+  box-shadow: 0 1px 3px 0 #898989;
+  border-radius: 5px;
+  background-color: $white;
+
+  button {
+    font-size: 14px;
+    color: $secondary;
+    background-color: $white;
+    padding: 11px 24px;
+    border: none;
+    // margin-right: 1px;
+    outline-width: 0px;
+    cursor: pointer;
+    letter-spacing: normal;
+    line-height: normal;
+    background-color: $white;
+    color: $secondary;
+  }
+
+  button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  button.active {
+    opacity: 0.26;
+    border-radius: 5px;
+    background-color: $purple; // rgba($purple, .26);;
+    color: $white;
+    font-weight: bold;
+    border-right: 1px solid $primary;
+  }
+}

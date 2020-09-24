@@ -1,0 +1,16 @@
+//
+// Forms
+//
+
+label {
+  // adding agreed design styles
+
+  color: $brown-grey;
+  font-size: 12px;
+  letter-spacing: -0.33px;
+  line-height: normal;
+}
+
+label.custom-control-label {
+  line-height: 1.75rem;
+}

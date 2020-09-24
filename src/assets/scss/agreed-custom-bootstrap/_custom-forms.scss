@@ -1,0 +1,27 @@
+// Radios
+//
+// Tweak just a few things for radios.
+
+.custom-radio {
+  .custom-control-input {
+    // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+    &[disabled],
+    &:disabled {
+      ~ .custom-control-label {
+        &::before {
+          // remvoe border as per our design
+          border-width: 0px;
+        }
+      }
+    }
+  }
+
+  .custom-control-input {
+    ~ .custom-control-label:hover {
+      &::before {
+        // border color change on hover
+        border-color: $primary;
+      }
+    }
+  }
+}
